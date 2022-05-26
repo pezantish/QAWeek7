@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class ZooAnimal {
+public class Animal {
 	
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,15 +23,15 @@ public class ZooAnimal {
 	private String environment; 
 
 	// Default constructor - Spring uses this
-	public ZooAnimal() {}
+	public Animal() {}
 	
-	public ZooAnimal(String name, String species, String environment) {
+	public Animal(String name, String species, String environment) {
 		this.name = name;
 		this.species = species;
 		this.environment = environment;
 	}
 
-	public ZooAnimal(long id, String name, String species, String environment) {
+	public Animal(long id, String name, String species, String environment) {
 		this.id = id;
 		this.name = name;
 		this.species = species;
@@ -113,7 +113,7 @@ public class ZooAnimal {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ZooAnimal other = (ZooAnimal) obj;
+		Animal other = (Animal) obj;
 		if (name == null) {
 			if (other.name != null)
 				return false;
